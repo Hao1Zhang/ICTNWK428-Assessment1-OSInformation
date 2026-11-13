@@ -1,4 +1,10 @@
 # Get specific computer information based on the parameter.
+<#
+.SYNOPSIS
+Gets a requested system information property.
+.PARAMETER PropertyName
+The system information property to retrieve.
+#>
 function Get-SystemInformation {
     param(
         [string]$PropertyName
@@ -60,6 +66,10 @@ function Get-SystemInformation {
 }
 
 # Get all seven types of computer information.
+<#
+.SYNOPSIS
+Gets all seven categories of system information.
+#>
 function Get-AllInformation {
     try {
         # Get computer information once for all standard computer properties.

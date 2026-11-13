@@ -4,8 +4,8 @@ try {
 }
 catch {
     # Display an error if the module cannot be imported.
-    Write-Host 'Error importing OSInfoModule.psm1.'
-    Write-Host $_.Exception.Message
+    Write-Output 'Error importing OSInfoModule.psm1.'
+    Write-Output $_.Exception.Message
     return
 }
 
@@ -37,15 +37,15 @@ function Start-OSInformationMenu {
     while ($selection -ne '9') {
 
         # Display the menu.
-        Show-Menu | ForEach-Object { Write-Host $_ }
+        Show-Menu | ForEach-Object { Write-Output $_ }
 
         # Display the result from the previous selection.
         if ($output -ne '') {
-            Write-Host ''
-            Write-Host $output
+            Write-Output ''
+            Write-Output $output
         }
 
-        Write-Host ''
+        Write-Output ''
 
         # Ask the user to enter a menu option.
         $selection = Read-Host 'Enter your selection (1-9)'
@@ -103,7 +103,7 @@ function Start-OSInformationMenu {
 
             '9' {
                 # Exit the program.
-                Write-Host 'Exiting the program.'
+                Write-Output 'Exiting the program.'
             }
 
             default {
